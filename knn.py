@@ -18,7 +18,7 @@ from sklearn.neighbors import KNeighborsClassifier
 base = pd.read_csv('base/data.csv')
 def remove_features(lista_features):
     for i in lista_features:
-        dataset.drop(i, axis=1, inplace=True)
+        base.drop(i, axis=1, inplace=True)
     return 0
 
 remove_features(['song_title'])

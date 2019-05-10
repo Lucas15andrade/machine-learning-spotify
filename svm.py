@@ -44,7 +44,12 @@ remove_features(['artist'])
 
 print(dataset.head())
 
-param_grid = {'C': [0.001, 0.01, 0.1, 1, 10,100], 'gamma': [0.001, 0.01, 0.1, 1, 10, 100]}
+param_grid = {
+    'C': [0.1,10,100],
+    'gamma': [0.1,0.01,0.001],
+    'kernel': ['rbf', 'poly', 'sigmoid', 'linear']
+}
+
 
 grid = GridSearchCV(SVC(), param_grid, verbose=1, cv=3)
 
